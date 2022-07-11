@@ -1,0 +1,56 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<vector>
+#include<algorithm>
+#include<climits>
+using namespace std;
+
+
+pair<int,int> minDifference(vector<int> a,vector<int> b){
+    //Complete this method
+    int m = a.size();
+    int n = b.size();
+    sort(a.begin(), a.end());
+    sort(b.begin(),b.end());
+    int low = INT_MAX;
+    pair<int,int> p;
+    int a1=0,b1=0;
+    while (a1<m and b1<n){
+        if(abs(a[a1]-b[b1])<low){
+            low = abs(a[a1]-b[b1]);
+            p.first=a[a1];
+            p.second=b[b1];
+        }
+        if(a[a1]<b[b1]){
+            a1++;
+        }
+        if(a[a1]>b[b1]){
+            b1++;
+        }
+    }
+    return p;
+    
+    
+}
+
+int main()
+{
+    
+    vector<int> arr1 = {23, 5, 10, 17,30};
+ 
+    // Input given array B
+    vector<int> arr2= {26, 135, 136, 14, 19};
+    auto p = minDifference(arr1,arr2);
+    // it is initialised to 0
+    cout <<"{"<< p.first<<","<<p.second<<"}"<<endl; 
+    
+
+    return 0;
+}
