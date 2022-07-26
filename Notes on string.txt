@@ -1,0 +1,7 @@
+*    cin >> string ;
+      -> This helps to input of one word in a string.
+     getline(cin,string): Used to enter a sentence/paragraph.
+
+*    str.ignore(): It takes the cursor to next line, hence ignores the current line.
+
+*    string.push_back(str[i]): Always try to use push_back function to add characters in the string(helps in time complexity), instead of using string +=str[i]
